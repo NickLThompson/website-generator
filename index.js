@@ -1,10 +1,12 @@
 // dependencies
+const { utils } = require("@jest/reporters");
 const inquirer = require("inquirer");
+const Employee = require("./utils/Employee")
 
 // 
 const questions = [
     {
-        name: "tmName",
+        name: "name",
         type: "input",
         message: "What is your team manager's name?"
     },
@@ -25,4 +27,8 @@ const questions = [
     },
 ]
 
-inquirer.prompt(questions);
+inquirer.prompt(questions).then((answers) => {
+    // console.log(answers);
+    
+})
+
