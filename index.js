@@ -28,7 +28,7 @@ const questions = [
 ]
 
 inquirer.prompt(questions).then((answers) => {
-    // console.log(answers);
+    console.log(answers);
     
 })
 
