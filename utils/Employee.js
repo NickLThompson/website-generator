@@ -1,7 +1,8 @@
 const fs = require("fs");
 
+// creating an employee class for all employees, need their name, id, and email
 class Employee {
-    constructor(name, id, email) {
+    constructor(name, email, id) {
         this.name = name;
         this.id = id;
         this.email = email;
@@ -9,11 +10,11 @@ class Employee {
     getName() {
         return this.name;
     }
-    getId() {
-        return this.id;
-    }
     getEmail() {
         return this.email;
+    }
+    getId() {
+        return this.id;
     }
     getRole() {
         return "Employee";
