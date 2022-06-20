@@ -115,11 +115,9 @@ const addEmployee = () => {
         }
 
         if (confirmAddEmployee) {
-            return addEmployee(team);
-        } else {
-            return team;
+            addEmployee();
         }
     })
 }
 
-addManager();
+addEmployee();
