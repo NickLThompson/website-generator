@@ -1,11 +1,12 @@
 // dependencies
-const { utils } = require("@jest/reporters");
+const template = require("./utils/template")
 const inquirer = require("inquirer");
-const fs = require("fs");
-const Employee = require("./utils/Employee");
-const Engineer = require("./utils/Engineer");
-const Intern = require("./utils/Intern");
-const Manager = require("./utils/Manager");
+const writeToFile = require("./utils/writeToFile")
+
+const Employee = require("./lib/Employee");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
 
 // empty array to add employees to print out
 const team = [];
@@ -114,10 +115,20 @@ const addEmployee = () => {
             team.push(intern)
         }
 
-        if (confirmAddEmployee) {
+        if (confirmAdd) {
             addEmployee();
         }
     })
 }
 
-addEmployee();
+addManager()
+    .then(addEmployee)
+    .then(team => {
+        return template(team);
+    })
+    .then(generatedHTML => {
+        return writeToFile(generatedHTML);
+    })
+    .catch(err => {
+        console.log(err);
+    });

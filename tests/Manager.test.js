@@ -1,5 +1,4 @@
-const { default: test } = require("test");
-const Manager = require("./Manager");
+const Manager = require("../utils/Manager");
 
 
 // grabbing the role from getRole();

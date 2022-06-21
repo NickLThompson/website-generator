@@ -1,5 +1,4 @@
-const { default: test } = require("test");
-const Intern = require("./Intern");
+const Intern = require("../utils/Intern");
 
 // creating the intern object
 test("creating an intern object", () => {

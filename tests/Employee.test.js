@@ -1,6 +1,5 @@
 // allowing testing and bringing the employee constructor
-const { default: test } = require("test");
-const Employee = require("./Employee");
+const Employee = require("../utils/Employee");
 
 test("creating an employee object", () => {
     const employee = new Employee("Nickolas", "thompsonnickolas1@gmail.com", 2816);

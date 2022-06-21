@@ -1,5 +1,4 @@
-const { default: test } = require("test");
-const Engineer = require("./Engineer")
+const Engineer = require("../utils/Engineer")
 
 // creating an engineer object
 test("creating an engineer object", () => {
