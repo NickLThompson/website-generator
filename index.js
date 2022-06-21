@@ -1,8 +1,7 @@
 // dependencies
 const template = require("./utils/template")
 const inquirer = require("inquirer");
-const writeToFile = require("./utils/writeToFile")
-
+const fs = require("fs");
 const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -121,14 +120,25 @@ const addEmployee = () => {
     })
 }
 
+const writeFile = data => {
+    fs.writeFile("./output/index.html", data, err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Website generated!")
+        }
+    })
+}
+
 addManager()
     .then(addEmployee)
     .then(team => {
         return template(team);
     })
     .then(generatedHTML => {
-        return writeToFile(generatedHTML);
+        return writeFile(generatedHTML);
     })
     .catch(err => {
         console.log(err);
     });
+
