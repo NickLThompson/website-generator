@@ -1,5 +1,5 @@
 // allowing testing and bringing the employee constructor
-const Employee = require("../utils/Employee");
+const Employee = require("../lib/Employee.js");
 
 test("creating an employee object", () => {
     const employee = new Employee("Nickolas", "thompsonnickolas1@gmail.com", 2816);
@@ -29,7 +29,7 @@ test("gets employee email", () => {
 test("gets employee id", () => {
     const employee = new Employee("Nickolas", "thompsonnickolas1@gmail.com", 2816);
 
-    expect(employee.getid()).toEqual(expect.any(Number));
+    expect(employee.getid).toEqual(expect.any(Number));
 });
 
 // grabbing the role from getRole();

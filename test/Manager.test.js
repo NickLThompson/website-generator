@@ -1,4 +1,4 @@
-const Manager = require("../utils/Manager");
+const Manager = require("../lib/Manager.js");
 
 
 // grabbing the role from getRole();

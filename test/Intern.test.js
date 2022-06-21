@@ -1,4 +1,4 @@
-const Intern = require("../utils/Intern");
+const Intern = require("../lib/Intern.js");
 
 // creating the intern object
 test("creating an intern object", () => {
@@ -6,7 +6,7 @@ test("creating an intern object", () => {
 });
 
 // expecting the intern's school to match the string type
-expect(Intern.school).toEqual(expect.any(String));
+expect(Intern.school).toEqual("ASU");
 
 // now we run the tests
 // grabbing the intern's role through getRole();
